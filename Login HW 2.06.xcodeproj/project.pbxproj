@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930304C129D763D70050CEFB /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930304C029D763D70050CEFB /* GreetingViewController.swift */; };
 		93253E2E29D6D76E006660AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93253E2D29D6D76E006660AE /* AppDelegate.swift */; };
 		93253E3029D6D76E006660AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93253E2F29D6D76E006660AE /* SceneDelegate.swift */; };
 		93253E3229D6D76E006660AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93253E3129D6D76E006660AE /* ViewController.swift */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		930304C029D763D70050CEFB /* GreetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingViewController.swift; sourceTree = "<group>"; };
 		93253E2A29D6D76E006660AE /* Login HW 2.06.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Login HW 2.06.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93253E2D29D6D76E006660AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93253E2F29D6D76E006660AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				93253E2D29D6D76E006660AE /* AppDelegate.swift */,
 				93253E2F29D6D76E006660AE /* SceneDelegate.swift */,
 				93253E3129D6D76E006660AE /* ViewController.swift */,
+				930304C029D763D70050CEFB /* GreetingViewController.swift */,
 				93253E3329D6D76E006660AE /* Main.storyboard */,
 				93253E3829D6D76F006660AE /* LaunchScreen.storyboard */,
 				93253E3B29D6D76F006660AE /* Info.plist */,
@@ -137,6 +140,7 @@
 				93253E3229D6D76E006660AE /* ViewController.swift in Sources */,
 				93253E2E29D6D76E006660AE /* AppDelegate.swift in Sources */,
 				93253E3029D6D76E006660AE /* SceneDelegate.swift in Sources */,
+				930304C129D763D70050CEFB /* GreetingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

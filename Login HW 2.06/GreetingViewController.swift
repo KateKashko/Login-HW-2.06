@@ -11,7 +11,7 @@ class GreetingViewController: UIViewController {
 
     @IBOutlet var welcomeLabel: UILabel!
     
-    var userName = ""
+    var userName = "
     
     override func viewDidLoad() {
         super.viewDidLoad()

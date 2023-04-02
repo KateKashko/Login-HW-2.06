@@ -14,26 +14,32 @@ final class ViewController: UIViewController {
     @IBOutlet var logInButtomTappet: UIButton!
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let greetingVC = segue.destination as? GreetingViewController else { return }
     }
     
     @IBAction func loginButtonTapped() {
-        guard var inputText = userNameTF.text, !inputText.isEmpty else {
+        guard let inputText = userNameTF.text, !inputText.isEmpty else {
             showAlert(withTitle: "Text field is empty", andMessage: "Please enter your name")
             return
         }
-        
-        let usernamePattern = "ˆ[a-zA-Z]{3,20}$"
-                let isUserNameValid = NSPredicate(format: "SELF MATCHES %@", usernamePattern)
-                    .evaluate(with: inputText)
-                if !isUserNameValid {
-                    showAlert(withTitle: "Invalid login or password",
-                              andMessage: "Please enter correct login and password")
-                }
+        guard let userName = userNameTF.text else {
+            showAlert(withTitle: "Invalid login or password",
+                      andMessage: "Please enter correct login and password")
+            return
+        }
+        guard let password = passwordTF.text else {
+            showAlert(withTitle: "Invalid login or password",
+                      andMessage: "Please enter correct login and password")
+            return
+        }
+        registerUser(with: userName, password: password)
                 userNameTF.text = ""
+        
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "GreetingViewController") as! GreetingViewController
         vc.userName = userNameTF.text!
         self.navigationController?.pushViewController(vc, animated: true)
@@ -52,6 +58,10 @@ final class ViewController: UIViewController {
                     return
                 }
         }
+    private func registerUser(with userName: String, password: String) {
+        let userName = "Kate"
+        let password = "1234"
+    }
     
     private func showAlert(withTitle title: String, andMessage message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

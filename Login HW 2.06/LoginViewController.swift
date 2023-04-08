@@ -7,19 +7,22 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class LoginViewController: UIViewController {
     
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
-    @IBOutlet var logInButtomTappet: UIButton!
-    
-    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//    }
+   
+    private let userName = "Kate"
+    private let password = "1234"
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let greetingVC = segue.destination as? GreetingViewController else { return }
+        greetingVC.userName = userName
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
     
     @IBAction func loginButtonTapped() {
@@ -27,41 +30,34 @@ final class ViewController: UIViewController {
             showAlert(withTitle: "Text field is empty", andMessage: "Please enter your name")
             return
         }
-        guard let userName = userNameTF.text else {
+        guard userNameTF.text == userName, passwordTF.text == password else {
             showAlert(withTitle: "Invalid login or password",
                       andMessage: "Please enter correct login and password")
             return
         }
-        guard let password = passwordTF.text else {
-            showAlert(withTitle: "Invalid login or password",
-                      andMessage: "Please enter correct login and password")
-            return
-        }
-        registerUser(with: userName, password: password)
-                userNameTF.text = ""
-        
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "GreetingViewController") as! GreetingViewController
-        vc.userName = userNameTF.text!
-        self.navigationController?.pushViewController(vc, animated: true)
+        performSegue(withIdentifier: "showWelcomeVC", sender: nil)
     }
     
     @IBAction func forgotNameButton() {
         guard let inputText = userNameTF.text, !inputText.isEmpty else {
-                showAlert(withTitle: "Oops!", andMessage: "Your name is Kate 😊")
+                showAlert(withTitle: "Oops!", andMessage: "Your name is \(userName) 😊")
                 return
             }
     }
     
     @IBAction func forgotPasswordButton() {
             guard let inputText = userNameTF.text, !inputText.isEmpty else {
-                    showAlert(withTitle: "Oops!", andMessage: "Your password is 1234 😊")
+                    showAlert(withTitle: "Oops!", andMessage: "Your password is \(password) 😊")
                     return
                 }
         }
-    private func registerUser(with userName: String, password: String) {
-        let userName = "Kate"
-        let password = "1234"
+    
+    
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        userNameTF.text = ""
+        passwordTF.text = ""
     }
+
     
     private func showAlert(withTitle title: String, andMessage message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

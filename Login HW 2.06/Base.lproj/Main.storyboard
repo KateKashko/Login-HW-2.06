@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Login_HW_2_06" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Login_HW_2_06" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,7 +35,6 @@
                                         <buttonConfiguration key="configuration" style="filled" title="Log In"/>
                                         <connections>
                                             <action selector="loginButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vm8-A3-HKT"/>
-                                            <segue destination="7Yc-SF-8xm" kind="show" id="g33-1H-jc2"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -75,9 +74,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="logInButtomTappet" destination="k1L-ga-7oO" id="HKc-qj-vDl"/>
                         <outlet property="passwordTF" destination="srb-LZ-7QY" id="Cwz-xx-peb"/>
                         <outlet property="userNameTF" destination="olB-96-6pl" id="ZeK-6z-lHR"/>
+                        <segue destination="7Yc-SF-8xm" kind="presentation" identifier="showWelcomeVC" modalPresentationStyle="fullScreen" id="JaG-ah-a3C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -89,7 +88,7 @@
             <objects>
                 <viewController storyboardIdentifier="GreetingViewController" id="7Yc-SF-8xm" customClass="GreetingViewController" customModule="Login_HW_2_06" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cXv-5u-Kfa">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, User!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qT2-kd-bi4">
@@ -99,15 +98,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8E0-iO-11T">
-                                <rect key="frame" x="163" y="577" width="67" height="36"/>
+                                <rect key="frame" x="163" y="612" width="67" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Log out">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="logoutButton:" destination="7Yc-SF-8xm" eventType="touchUpInside" id="Bpt-ik-knV"/>
-                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="👋🏻" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XvF-xb-LKp">
                                 <rect key="frame" x="163" y="260" width="67" height="66"/>
@@ -116,12 +112,12 @@
                                     <constraint firstAttribute="width" constant="67" id="pkm-Kh-BYW"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="55"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fMW-Ae-Vgq"/>
-                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <color key="backgroundColor" systemColor="systemGray4Color"/>
                         <constraints>
                             <constraint firstItem="8E0-iO-11T" firstAttribute="centerX" secondItem="cXv-5u-Kfa" secondAttribute="centerX" id="6Xi-qj-AaI"/>
                             <constraint firstItem="fMW-Ae-Vgq" firstAttribute="bottom" secondItem="8E0-iO-11T" secondAttribute="bottom" constant="170" id="K7E-wE-bR2"/>
@@ -145,8 +141,8 @@
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

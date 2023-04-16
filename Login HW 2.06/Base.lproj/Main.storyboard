@@ -104,6 +104,9 @@
                                 <state key="normal" title="Log out">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="vYW-RQ-GfI" kind="unwind" unwindAction="unwindFor:" id="j56-3C-F7R"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="👋🏻" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XvF-xb-LKp">
                                 <rect key="frame" x="163" y="260" width="67" height="66"/>
@@ -133,6 +136,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gBo-IZ-ALt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="vYW-RQ-GfI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="814.50381679389307" y="10.563380281690142"/>
         </scene>
